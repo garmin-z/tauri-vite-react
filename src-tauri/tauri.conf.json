@@ -1,0 +1,88 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "studio",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "sidecar": true,
+        "scope": [
+          {
+            "name": "bin/go",
+            "sidecar": true
+          }
+        ]
+      },
+      "app": {
+        "all": true,
+        "show": true
+      }
+    },
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://garmin-z.github.io/api/releases.json"
+      ],
+      "dialog": false,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDJENDE2NzY3OEQ2NTkyMkIKUldRcmttV05aMmRCTFIwdThNQjA2ZSs1R2VxL0pQL2djM3Y1a2pGTzJBTGl2TnhSdG5Ed3p5L3oK"
+    },
+    "windows": [
+      {
+        "title": "studio",
+        "width": 1280,
+        "height": 768,
+        "minWidth": 1080,
+        "minHeight": 648,
+        "fullscreen": false,
+        "visible": false,
+        "transparent": true
+      }
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    },
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri.build",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "windows": {
+        "allowDowngrades": true,
+        "nsis": {
+          "installerIcon": "icons/icon.ico",
+          "displayLanguageSelector": true,
+          "languages": [
+            "English",
+            "SimpChinese"
+          ]
+        },
+        "tsp": false,
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "downloadBootstrapper"
+        }
+      },
+      "externalBin": [
+        "bin/go"
+      ]
+    }
+  }
+}

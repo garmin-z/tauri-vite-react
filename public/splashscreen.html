@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splashscreen</title>
+</head>
+
+<body>
+
+    <h4>元神启动...</h4>
+</body>
+<script>
+    const invoke = window.__TAURI_INVOKE__
+    document.addEventListener('DOMContentLoaded', () => {
+        // 这将等待窗口加载，但你可以在您想要的任何触发器上运行此函数
+        // setTimeout(() => {
+        //     invoke('plugin:commands|close_splashscreen')
+        // }, 2000);
+    })
+</script>
+
+</html>
