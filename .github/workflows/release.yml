@@ -14,8 +14,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # 选择编译平台
-        platform: [macos-latest, ubuntu-20.04, windows-latest]
+        # 选择编译平台 macos-latest, ubuntu-20.04,
+        platform: [windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
@@ -64,7 +64,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install app dependencies and build it
-        run: pnpm install --no-frozen-lockfile && pnpm bundle && bundle init
+        run: pnpm install --no-frozen-lockfile
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
