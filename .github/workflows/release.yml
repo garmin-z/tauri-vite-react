@@ -78,7 +78,7 @@ jobs:
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
-          releaseName: 'FileHub v__VERSION__' # 自定义release名称，__VERSION__将自动填写为软件版本信息
+          releaseName: 'tauri-vite-react v__VERSION__' # 自定义release名称，__VERSION__将自动填写为软件版本信息
           releaseBody: 'See the assets to download and install this version.'
           releaseDraft: true
           prerelease: false
