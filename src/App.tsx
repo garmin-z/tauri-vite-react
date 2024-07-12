@@ -14,7 +14,7 @@ function App() {
     }, 2000);
   }, []);
 
-  const [algorithm, setAlgorithm] = useState<string>('light');
+  const [algorithm] = useState<string>('light');
 
   // console.log('algorithm', theme.defaultAlgorithm);
 
