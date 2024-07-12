@@ -64,7 +64,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install app dependencies and build it
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile && pnpm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
